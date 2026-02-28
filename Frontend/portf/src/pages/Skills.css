@@ -1,0 +1,57 @@
+.skills-container {
+    display: flex;
+    align-items: stretch;
+    position: relative;
+    min-height: calc(100vh - var(--nav-height));
+    padding: 0;
+    /* Take full width to handle split screen cleanly */
+    overflow: hidden;
+}
+
+/* The collage component explicitly sets position "right: 0" inside itself.
+   To override it for the left side just on the Skills page without breaking Home,
+   we need deep selectors.
+*/
+.skills-left-bg {
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+
+.skills-left-bg .collage-container {
+    right: auto !important;
+    /* Override right float */
+    left: 0 !important;
+    /* Pin to left */
+}
+
+/* Right side content for the menu */
+.skills-right-content {
+    width: 50%;
+    flex-grow: 1;
+    position: relative;
+    z-index: 2;
+    background-color: var(--bg-color);
+    /* To cover up any overlap */
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+    .skills-container {
+        flex-direction: column;
+    }
+
+    .skills-left-bg {
+        width: 100%;
+        position: absolute;
+        z-index: 0;
+        opacity: 0.15;
+    }
+
+    .skills-right-content {
+        width: 100%;
+        z-index: 2;
+        background: transparent;
+    }
+}

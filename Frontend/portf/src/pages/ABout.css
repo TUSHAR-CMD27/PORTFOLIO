@@ -6,7 +6,7 @@
     min-height: calc(100vh - var(--nav-height));
     padding-left: 10%;
     overflow: hidden;
-    background-color: rgba(7, 174, 90, 0.03);
+    background-color: var(--bg-color);
     /* Hide horizontal overflow */
     padding-top: 5vh;
 }
