@@ -1,9 +1,30 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './AnimatedCollage.css';
 
 const AnimatedCollage = () => {
+  const containerRef = useRef(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+        } else {
+          setInView(false); // Reset animation when scrolled away
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="collage-container">
+    <div ref={containerRef} className={`collage-container ${inView ? 'run-anim' : ''}`}>
       {/* 1. Static Background Layers */}
       <div className="box bg-orange-base ">
          <img 

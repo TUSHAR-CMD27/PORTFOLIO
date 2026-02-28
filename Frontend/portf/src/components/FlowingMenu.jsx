@@ -7,13 +7,14 @@ function FlowingMenu({
   speed = 15,
   textColor = '#1c2b1e', // Dark green matching typography
   bgColor = 'transparent',
-  marqueeBgColor = '#8c9b7a', // Olive green banner
-  marqueeTextColor = '#1c2b1e', // Dark green text on hover banner
-  borderColor = 'rgba(28, 43, 30, 0.2)' // Subtle dark green divider
+  marqueeBgColor = '#fdba8dff', // Olive green banner
+  marqueeTextColor = '#000000ff', // Dark green text on hover banner
+  borderColor = 'rgba(0, 0, 0, 0.2)' // Subtle dark green divider
 }) {
   return (
     <div className="menu-wrap" style={{ backgroundColor: bgColor }}>
       <nav className="menu">
+        <h1 style={{textAlign:'center', backgroundColor:'#723a23ff', color:'white'}}>TECH - STACK I USE</h1>
         {items.map((item, idx) => (
           <MenuItem
             key={idx}
