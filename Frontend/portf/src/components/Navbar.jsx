@@ -1,25 +1,49 @@
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import './Navbar.css';
 
 const Navbar = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
+  const [activeId, setActiveId] = useState('home');
 
   const navLinks = [
-    { path: '/', label: 'Home' },
-    // "About" is unlinked but file still remains
-    { path: '/skills', label: 'Skills' },
-    { path: '/projects', label: 'Projects' },
-    { path: '/experience', label: 'Work Experience' },
-    { path: '/contact', label: 'Contact Me' },
+    { id: 'home', label: 'Home' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'experience', label: 'Work Experience' },
+    { id: 'contact', label: 'Contact Me' },
   ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      let current = 'home';
+      for (const link of navLinks) {
+        const el = document.getElementById(link.id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          // Check if section is visible in top portion of viewport
+          if (rect.top <= window.innerHeight * 0.3 && rect.bottom >= window.innerHeight * 0.3) {
+            current = link.id;
+          }
+        }
+      }
+      setActiveId(current);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToId = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <nav className="navbar">
-      {/* Shift logo to extreme left while keeping within layout rules */}
       <div className="navbar-container" style={{ maxWidth: '100%', paddingLeft: '2%' }}>
         <div 
-          onClick={() => navigate('/')} 
+          onClick={() => scrollToId('home')} 
           className="navbar-logo"
           style={{ cursor: 'pointer', marginRight: 'auto' }}
         >
@@ -27,10 +51,10 @@ const Navbar = () => {
         </div>
         <ul className="nav-menu">
           {navLinks.map((link) => (
-            <li key={link.path} className="nav-item">
+            <li key={link.id} className="nav-item">
               <span
-                onClick={() => navigate(link.path)}
-                className={location.pathname === link.path ? 'nav-link active' : 'nav-link'}
+                onClick={() => scrollToId(link.id)}
+                className={activeId === link.id ? 'nav-link active' : 'nav-link'}
                 style={{ cursor: 'pointer' }}
               >
                 {link.label}

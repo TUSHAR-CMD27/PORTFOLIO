@@ -3,9 +3,8 @@
     align-items: stretch;
     position: relative;
     min-height: calc(100vh - var(--nav-height));
-    padding: 0;
-    /* Take full width to handle split screen cleanly */
-    overflow: hidden;
+    padding: 0 10px;
+    gap: 10px;
 }
 
 /* The collage component explicitly sets position "right: 0" inside itself.
@@ -16,6 +15,8 @@
     width: 50%;
     height: 100%;
     position: relative;
+    z-index: 1;
+    /* Elevate above default stacking context to prevent hiding */
 }
 
 .skills-left-bg .collage-container {
@@ -27,7 +28,6 @@
     /* Fill the entire left 50% container */
 }
 
-/* Right side content for the menu */
 .skills-right-content {
     width: 50%;
     flex-grow: 1;

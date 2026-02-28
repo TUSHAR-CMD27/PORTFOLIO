@@ -5,33 +5,17 @@
     position: relative;
     min-height: calc(100vh - var(--nav-height));
     padding-left: 10%;
-    overflow: hidden;
-    background-color: transparent;
-    /* Hide horizontal overflow */
     padding-top: 5vh;
 }
 
-/* Make inner wrapper scrollable, background stays fixed via Absolute pos in Collage */
 .about-content-scroll {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    /* Keep text content at 50% */
-    height: calc(100vh - var(--nav-height) - 10vh);
-    overflow-y: auto;
+    width: 55%;
+    /* Keep text content at ~55% */
     padding-right: 3rem;
     padding-bottom: 5rem;
-    background-color: var(--bg-color);
-    /* Overlap background solid if scrolling */
-
-    /* Hide scrollbar for cleaner look */
-    -ms-overflow-style: none;
-    scrollbar-width: none;
     z-index: 2;
-}
-
-.about-content-scroll::-webkit-scrollbar {
-    display: none;
 }
 
 
