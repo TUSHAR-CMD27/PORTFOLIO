@@ -1,0 +1,141 @@
+.about-container {
+    display: flex;
+    align-items: flex-start;
+    /* Align near top for scrolling */
+    position: relative;
+    min-height: calc(100vh - var(--nav-height));
+    padding-left: 10%;
+    overflow: hidden;
+    background-color: rgba(7, 174, 90, 0.03);
+    /* Hide horizontal overflow */
+    padding-top: 5vh;
+}
+
+/* Make inner wrapper scrollable, background stays fixed via Absolute pos in Collage */
+.about-content-scroll {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    /* Take up left half */
+    max-width: 700px;
+    height: calc(100vh - var(--nav-height) - 10vh);
+    overflow-y: auto;
+    padding-right: 3rem;
+    padding-bottom: 5rem;
+    background-color: var(--bg-color);
+    /* Overlap background solid if scrolling */
+
+    /* Hide scrollbar for cleaner look */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    z-index: 2;
+}
+
+.about-content-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Left Side Typography */
+.about-big-title {
+    font-size: 5.5rem;
+    line-height: 1.05;
+    font-weight: 700;
+    color: #1c2b1e;
+    /* Dark green */
+    margin-bottom: 3rem;
+    letter-spacing: -2px;
+}
+
+/* List with Angle brackets */
+.about-list-section {
+    margin-bottom: 4rem;
+    font-family: inherit;
+    font-size: 1.1rem;
+}
+
+.about-list {
+    color: #4b6b35;
+    /* Sap green text */
+    padding-left: 0;
+}
+
+.about-list li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.list-indent-1 {
+    padding-left: 2rem;
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.list-tag {
+    color: #8c9b7a;
+    /* Olive color for the tags */
+    font-family: monospace;
+    font-size: 1rem;
+}
+
+.list-value {
+    color: #1c2b1e;
+    font-weight: 500;
+}
+
+.mt-3 {
+    margin-top: 1.5rem !important;
+}
+
+/* Paragraph section */
+.about-paragraph-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.about-description {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #4a4a4a;
+    position: relative;
+}
+
+.about-description::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 5px;
+    height: calc(100% - 10px);
+    width: 3px;
+    background-color: #8c9b7a;
+    /* Olive accent */
+}
+
+
+@media screen and (max-width: 1024px) {
+    .about-content-scroll {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-container {
+        padding-left: 5%;
+    }
+
+    .about-content-scroll {
+        width: 100%;
+        padding-right: 5%;
+        background-color: rgba(252, 249, 242, 0.85);
+        /* Semi-transparent bg over collage */
+        backdrop-filter: blur(5px);
+    }
+
+    .about-big-title {
+        font-size: 4rem;
+    }
+}

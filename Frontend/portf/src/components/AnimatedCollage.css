@@ -1,0 +1,442 @@
+.collage-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    background-color: #f4eee6;
+    /* Slightly textured paper base */
+    overflow: hidden;
+    z-index: -1;
+    /* Add a subtle grain effect */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+@media screen and (max-width: 768px) {
+    .collage-container {
+        width: 100%;
+        opacity: 0.15;
+        z-index: -2;
+    }
+}
+
+/* Reusable Box Styles */
+.box {
+    position: absolute;
+    box-shadow: 4px 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+/* --- HOVER EFFECTS --- */
+.glow-hover:hover {
+    transform: scale(1.02) translateY(-5px);
+    box-shadow: 0 15px 40px rgba(211, 66, 32, 0.2);
+    z-index: 10;
+}
+
+.shadow-hover:hover {
+    transform: scale(1.02) translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+/* --- CONTINUOUS ANIMATIONS --- */
+.float-1 {
+    animation: float1 6s ease-in-out infinite alternate;
+}
+
+.float-2 {
+    animation: float2 8s ease-in-out infinite alternate-reverse;
+}
+
+.float-3 {
+    animation: float3 7s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
+}
+
+.pulse-slow {
+    animation: pulse 10s ease-in-out infinite alternate;
+}
+
+/* --- STATIC BACKGROUND ELEMENTS --- */
+.bg-pattern-left {
+    left: 10%;
+    top: -10%;
+    width: 140px;
+    height: 75%;
+    background-color: transparent;
+    border-left: 2px solid rgba(12, 12, 12, 0.1);
+    border-right: 2px solid rgba(12, 12, 12, 0.1);
+    background-image: repeating-linear-gradient(0deg, transparent, transparent 20px, rgba(12, 12, 12, 0.05) 20px, rgba(12, 12, 12, 0.05) 22px);
+}
+
+.bg-orange-base {
+    background-color: #ce7d36;
+    width: 350px;
+    height: 400px;
+    left: 20%;
+    top: 25%;
+}
+
+.bg-black-large {
+    background-color: #111;
+    width: 450px;
+    height: 450px;
+    left: 40%;
+    top: -50px;
+}
+
+.bg-red-top {
+    background-color: #b44332;
+    width: 180px;
+    height: 180px;
+    right: 8%;
+    top: 0;
+}
+
+/* --- ENTANCE ANIMATED ELEMENTS --- */
+
+/* 1. Red Mandala (Bottom Left) */
+.anim-red-mandala {
+    background-color: #b44332;
+    width: 250px;
+    height: 250px;
+    left: 15%;
+    bottom: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: slideUpFade 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) 0.5s forwards;
+}
+
+/* 2. Black Square (Center) */
+.anim-black-center {
+    background-color: #111;
+    width: 220px;
+    height: 220px;
+    left: 42%;
+    top: 38%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    overflow: hidden;
+    animation: slideLeftFade 1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.8s forwards;
+}
+
+/* 3. Orange Square (Tilts in from right) */
+.anim-orange-tilt {
+    background-color: #ce7d36;
+    width: 200px;
+    height: 200px;
+    right: 25%;
+    top: 45%;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: slideAndTiltOrange 1.4s cubic-bezier(0.34, 1.56, 0.64, 1) 1.2s forwards;
+}
+
+/* 4. Paisley/Beige Block (Tilts in from top right) */
+.anim-paisley {
+    background-color: #f4eee6;
+    width: 280px;
+    height: 280px;
+    right: 12%;
+    top: 18%;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: slideAndTiltPaisley 1.4s cubic-bezier(0.34, 1.56, 0.64, 1) 1.6s forwards;
+    box-shadow: 10px 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* 5. Accents */
+.anim-accent-line {
+    width: 2px;
+    height: 150px;
+    background-color: #b44332;
+    left: 35%;
+    bottom: 20%;
+    opacity: 0;
+    animation: growLine 1s ease-out 2s forwards;
+}
+
+.anim-accent-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ce7d36;
+    border-radius: 50%;
+    right: 40%;
+    top: 30%;
+    opacity: 0;
+    animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 2.2s forwards;
+}
+
+.anim-accent-dot-2 {
+    width: 8px;
+    height: 8px;
+    background-color: #111;
+    border-radius: 50%;
+    right: 42%;
+    top: 28%;
+    opacity: 0;
+    animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 2.4s forwards;
+}
+
+/* --- CSS ART MOTIFS --- */
+
+/* Mandala Art using CSS */
+.mandala-art {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+        radial-gradient(circle, transparent 40%, rgba(255, 255, 255, 0.1) 41%, transparent 43%),
+        conic-gradient(from 0deg, transparent 0deg 10deg, rgba(255, 255, 255, 0.1) 10deg 20deg, transparent 20deg 30deg, rgba(255, 255, 255, 0.1) 30deg 40deg, transparent 40deg 50deg, rgba(255, 255, 255, 0.1) 50deg 60deg, transparent 60deg 70deg, rgba(255, 255, 255, 0.1) 70deg 80deg, transparent 80deg 90deg, rgba(255, 255, 255, 0.1) 90deg 100deg, transparent 100deg 110deg, rgba(255, 255, 255, 0.1) 110deg 120deg, transparent 120deg 130deg, rgba(255, 255, 255, 0.1) 130deg 140deg, transparent 140deg 150deg, rgba(255, 255, 255, 0.1) 150deg 160deg, transparent 160deg 170deg, rgba(255, 255, 255, 0.1) 170deg 180deg, transparent 180deg 190deg, rgba(255, 255, 255, 0.1) 190deg 200deg, transparent 200deg 210deg, rgba(255, 255, 255, 0.1) 210deg 220deg, transparent 220deg 230deg, rgba(255, 255, 255, 0.1) 230deg 240deg, transparent 240deg 250deg, rgba(255, 255, 255, 0.1) 250deg 260deg, transparent 260deg 270deg, rgba(255, 255, 255, 0.1) 270deg 280deg, transparent 280deg 290deg, rgba(255, 255, 255, 0.1) 290deg 300deg, transparent 300deg 310deg, rgba(255, 255, 255, 0.1) 310deg 320deg, transparent 320deg 330deg, rgba(255, 255, 255, 0.1) 330deg 340deg, transparent 340deg 350deg, rgba(255, 255, 255, 0.1) 350deg 360deg);
+}
+
+.mandala-inner {
+    width: 100px;
+    height: 100px;
+    border: 1px dashed rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    animation: spin 30s linear infinite;
+    position: absolute;
+}
+
+.mandala-center {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Geometric Lines Art */
+.geometric-lines {
+    width: 150%;
+    height: 150%;
+    background-image:
+        linear-gradient(45deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.05) 75%, transparent 75%, transparent);
+    background-size: 30px 30px;
+    animation: slideBg 15s linear infinite;
+}
+
+/* Paisley Art */
+.paisley-art {
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+.paisley-curve {
+    width: 160px;
+    height: 160px;
+    border: 3px solid #111;
+    border-radius: 50% 50% 0 50%;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    transform: rotate(45deg);
+    background: radial-gradient(circle at 70% 30%, transparent 20%, rgba(17, 17, 17, 0.05) 21%, transparent 35%);
+}
+
+.paisley-curve::before {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border: 2px dashed #111;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.paisley-dots {
+    width: 10px;
+    height: 10px;
+    background-color: #b44332;
+    border-radius: 50%;
+    position: absolute;
+    top: 60px;
+    left: 95px;
+    box-shadow: 20px 20px 0 #ce7d36, -20px 40px 0 #111;
+}
+
+/* Texture Overlay for Orange Box */
+.texture-overlay {
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 20% 80%, rgba(0, 0, 0, 0.1) 2px, transparent 3px),
+        radial-gradient(circle at 80% 20%, rgba(0, 0, 0, 0.1) 2px, transparent 3px);
+    background-size: 20px 20px;
+}
+
+/* Glassmorphism Depth Overlay */
+.glass-overlay {
+    width: 300px;
+    height: 150px;
+    bottom: 25%;
+    right: 15%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    animation: slideUpFade 1.5s ease-out 2.5s forwards;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* --- KEYFRAMES --- */
+@keyframes slideUpFade {
+    0% {
+        transform: translateY(80px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeftFade {
+    0% {
+        transform: translateX(80px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideAndTiltOrange {
+    0% {
+        transform: translate(100px, 50px) rotate(0deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(-12deg);
+        opacity: 1;
+    }
+}
+
+@keyframes slideAndTiltPaisley {
+    0% {
+        transform: translate(60px, -60px) rotate(0deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(35deg);
+        opacity: 1;
+    }
+}
+
+@keyframes growLine {
+    0% {
+        transform: scaleY(0);
+        transform-origin: top;
+        opacity: 0;
+    }
+
+    100% {
+        transform: scaleY(1);
+        transform-origin: top;
+        opacity: 1;
+    }
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    80% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes float1 {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(-15px) rotate(2deg);
+    }
+}
+
+@keyframes float2 {
+    0% {
+        transform: translateY(0px) rotate(-12deg);
+    }
+
+    100% {
+        transform: translateY(-10px) translateX(-5px) rotate(-10deg);
+    }
+}
+
+@keyframes float3 {
+    0% {
+        transform: translateY(0px) rotate(35deg);
+    }
+
+    100% {
+        transform: translateY(15px) rotate(38deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    100% {
+        transform: scale(1.02);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+}
+
+@keyframes slideBg {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 60px 60px;
+    }
+}
