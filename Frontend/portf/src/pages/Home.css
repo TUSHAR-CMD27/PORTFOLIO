@@ -5,6 +5,7 @@
     min-height: calc(100vh - var(--nav-height));
     padding-left: 10%;
     overflow: hidden;
+    
 }
 
 

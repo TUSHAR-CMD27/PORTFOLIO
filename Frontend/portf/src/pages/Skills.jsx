@@ -1,6 +1,6 @@
 import React from 'react';
 import './Skills.css';
-import AnimatedGreenCollage from '../components/AnimatedGreenCollage';
+import AnimatedCollage from '../components/AnimatedCollage';
 import FlowingMenu from '../components/FlowingMenu';
 
 const Skills = () => {
@@ -20,7 +20,7 @@ const Skills = () => {
     <div className="skills-container page-container fade-in">
       {/* Collage positioned left logically in layout, visually manipulated via CSS */}
       <div className="skills-left-bg">
-        <AnimatedGreenCollage />
+        <AnimatedCollage />
       </div>
       
       {/* Right side for Flowing Menu */}

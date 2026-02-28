@@ -1,9 +1,9 @@
 .collage-container {
     position: absolute;
     top: 0;
+    bottom: 0;
     right: 0;
     width: 50%;
-    height: 100%;
     background-color: #f4eee6;
     overflow: hidden;
     z-index: 0;

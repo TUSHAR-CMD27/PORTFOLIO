@@ -4,8 +4,9 @@
     /* Align near top for scrolling */
     position: relative;
     min-height: calc(100vh - var(--nav-height));
-    padding-left: 10%;
+    padding-left: 7%;
     padding-top: 5vh;
+    
 }
 
 .about-content-scroll {
@@ -13,9 +14,10 @@
     flex-direction: column;
     width: 55%;
     /* Keep text content at ~55% */
-    padding-right: 3rem;
+    padding-right: 9rem;
     padding-bottom: 5rem;
     z-index: 2;
+    
 }
 
 
@@ -26,8 +28,10 @@
     font-weight: 700;
     color: #1c2b1e;
     /* Dark green */
+    padding-left: 1rem;
     margin-bottom: 3rem;
     letter-spacing: -2px;
+    background-color: rgba(17, 59, 33, 0.186);
 }
 
 /* List with Angle brackets */
