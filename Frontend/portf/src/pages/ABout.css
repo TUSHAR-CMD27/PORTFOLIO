@@ -6,7 +6,7 @@
     min-height: calc(100vh - var(--nav-height));
     padding-left: 10%;
     overflow: hidden;
-    background-color: var(--bg-color);
+    background-color: transparent;
     /* Hide horizontal overflow */
     padding-top: 5vh;
 }
@@ -16,8 +16,7 @@
     display: flex;
     flex-direction: column;
     width: 50%;
-    /* Take up left half */
-    max-width: 700px;
+    /* Keep text content at 50% */
     height: calc(100vh - var(--nav-height) - 10vh);
     overflow-y: auto;
     padding-right: 3rem;

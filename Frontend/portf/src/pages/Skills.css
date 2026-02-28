@@ -23,6 +23,8 @@
     /* Override right float */
     left: 0 !important;
     /* Pin to left */
+    width: 100% !important;
+    /* Fill the entire left 50% container */
 }
 
 /* Right side content for the menu */
