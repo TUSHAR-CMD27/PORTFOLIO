@@ -7,8 +7,9 @@
     position: sticky;
     top: 0;
     z-index: 999;
-    background-color: var(--bg-color);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    background-color: var(--nav-bg);
+    border-bottom: 1px solid var(--nav-border);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .navbar-container {

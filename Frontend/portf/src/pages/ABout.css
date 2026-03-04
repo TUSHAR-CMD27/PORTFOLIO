@@ -26,12 +26,12 @@
     font-size: 5.5rem;
     line-height: 1.05;
     font-weight: 700;
-    color: #1c2b1e;
+    color: #9eec84;
     /* Dark green */
     padding-left: 1rem;
     margin-bottom: 3rem;
     letter-spacing: -2px;
-    background-color: rgba(17, 59, 33, 0.186);
+    background-color: rgba(25, 85, 48, 0.186);
 }
 
 /* List with Angle brackets */
@@ -42,7 +42,7 @@
 }
 
 .about-list {
-    color: #4b6b35;
+    color: #9eec84;
     /* Sap green text */
     padding-left: 0;
 }
@@ -69,7 +69,7 @@
 }
 
 .list-value {
-    color: #1c2b1e;
+    color: #9eec84;
     font-weight: 500;
 }
 
@@ -87,7 +87,7 @@
 .about-description {
     font-size: 1.25rem;
     line-height: 1.8;
-    color: #4a4a4a;
+    color: #32600c;
     position: relative;
 }
 

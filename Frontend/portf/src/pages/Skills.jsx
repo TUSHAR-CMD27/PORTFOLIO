@@ -13,6 +13,7 @@ const Skills = () => {
     { link: '#', text: 'MongoDB', image: 'https://upload.wikimedia.org/wikipedia/en/4/45/MongoDB-Logo.svg' },
     { link: '#', text: 'Node.js', image: 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg' },
     { link: '#', text: 'Express', image: 'https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png' },
+    { link: '#', text: 'FIGMA', image: 'https://imgs.search.brave.com/RbYzgYk7qLkPKQchjrwcNHDFFdWxiKOfJr8stjd1adI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi8zLzMzL0Zp/Z21hLWxvZ28uc3Zn/LzI1MHB4LUZpZ21h/LWxvZ28uc3ZnLnBu/Zw' },
     { link: '#', text: 'Machine Learning', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/256px-Scikit_learn_logo_small.svg.png' },
   ];
 

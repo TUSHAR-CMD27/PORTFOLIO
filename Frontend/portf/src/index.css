@@ -1,7 +1,9 @@
 :root {
-  --bg-color: #fcf9f2;
-  --text-color: #1a1a1a;
+  --bg-color: #1a1a1a;
+  --text-color: #fcf9f2;
   --accent-red: #d34220;
+  --nav-bg: #222;
+  --nav-border: rgba(255, 255, 255, 0.1);
   /* Sleek red for hover effects */
   --font-main: 'Skynila', sans-serif;
   --nav-height: 80px;

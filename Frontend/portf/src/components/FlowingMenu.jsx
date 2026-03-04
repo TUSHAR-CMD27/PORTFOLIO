@@ -5,7 +5,7 @@ import './FlowingMenu.css';
 function FlowingMenu({
   items = [],
   speed = 15,
-  textColor = '#1c2b1e', // Dark green matching typography
+  textColor = '#906c3bff', // Dark green matching typography
   bgColor = 'transparent',
   marqueeBgColor = '#fdba8dff', // Olive green banner
   marqueeTextColor = '#000000ff', // Dark green text on hover banner
