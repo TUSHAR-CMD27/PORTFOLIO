@@ -1,0 +1,180 @@
+.experience-container {
+    display: flex;
+    margin-top: 16px;
+    justify-content: space-between;
+    align-items: stretch;
+    position: relative;
+    min-height: calc(100vh - var(--nav-height));
+    width: 100%;
+    background-color: #0d0d0d;
+    /* Deep matte black matching the rest of the site */
+    overflow: hidden;
+    padding-left: 1vw;
+}
+
+/* Left Column */
+.exp-left-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 0rem;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    z-index: 2;
+    max-width: 45%;
+}
+
+.exp-heading {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 1rem;
+    padding-left: 0.6rem;
+    letter-spacing: 1px;
+}
+
+.exp-body {
+    font-size: 1.56rem;
+    font-weight: 700;
+    color: #bf712d;
+    line-height: 1.4;
+    padding-left: 1rem;
+    
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+}
+
+.exp-bullets {
+    list-style-type: disc;
+    padding-left: 1.6rem;
+    color: #fcfcfc;
+}
+
+.exp-bullets li {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+    color: #aa765a;
+}
+
+.exp-bullets li strong {
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+/* Center Column */
+.exp-center-column {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* Align image to bottom for grounding */
+    position: relative;
+    z-index: 3;
+    max-width: 50%;
+}
+
+.exp-center-image {
+    max-width: 90%;
+    height: auto;
+    object-fit: contain;
+    /* Move it down a bit so the legs are cut off correctly at bottom, and left a bit to overlap layout if needed */
+
+    filter: drop-shadow(0px 20px 40px rgba(0, 0, 0, 0.5));
+}
+
+/* Right Column */
+.exp-right-column {
+
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - var(--nav-height));
+    max-width: 100%;
+    z-index: 1;
+}
+
+.exp-right-bg {
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 170%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* Force the collage component to fit entirely inside this right column */
+.exp-right-bg .collage-container {
+    position: absolute;
+    opacity: 0.4;
+    filter: blur(1px);
+    top: 0;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: 100%;
+}
+
+.exp-right-content {
+    position: relative;
+    z-index: 2;
+    text-align: right;
+    padding-left: 2rem;
+    padding-right:rem;
+}
+
+.exp-role-text {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+    line-height: 1.1;
+    text-transform: capitalize;
+    text-shadow: 2px 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+.exp-date {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #FFFFFF;
+    margin-top: 0.5rem;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 1024px) {
+    .experience-container {
+        flex-direction: column;
+        padding-left: 5vw;
+        padding-right: 5vw;
+        padding-top: 5vh;
+        overflow-y: auto;
+    }
+
+    .exp-left-column,
+    .exp-center-column,
+    .exp-right-column {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .exp-center-image {
+        transform: translateY(0) translateX(0);
+        max-width: 100%;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .exp-right-column {
+        min-height: 50vh;
+        margin-top: 2rem;
+    }
+
+    .exp-right-bg .collage-container {
+        position: absolute;
+    }
+}

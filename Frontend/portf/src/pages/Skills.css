@@ -24,6 +24,7 @@
     right: auto !important;
     /* Override right float */
     left: 0 !important;
+    opacity: 0.9;
     /* Pin to left */
     width: 100% !important;
     /* Fill the entire left 50% container */

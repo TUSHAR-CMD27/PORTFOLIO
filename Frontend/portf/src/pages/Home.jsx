@@ -34,10 +34,10 @@ const Home = () => {
 
         <div className="about-paragraph-section">
           <p className="about-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+           As an engineering student, I’ve moved past just studying theory to getting my hands dirty with real-world applications. Whether it’s troubleshooting a complex design or building a project like [Insert Project Name] from scratch, I’m at my best when I’m solving puzzles that have a tangible impact.
           </p>
           <p className="about-description">
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. 
+           Beyond the technical skills like [Skill A] and [Skill B], I’ve learned that good engineering is as much about persistence and adaptability as it is about math. I enjoy the process of trial, error, and refinement that leads to a solid final product. My goal is to bring this mix of technical curiosity and practical problem-solving to a team where I can keep learning and start contributing to meaningful, high-stakes projects.
           </p>
            
         </div>
