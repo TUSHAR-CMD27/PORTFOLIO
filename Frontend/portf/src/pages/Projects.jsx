@@ -43,7 +43,7 @@ const Projects = () => {
   useEffect(() => {
     // Check if the route is exactly '/admin'
     // Since we use hash router or regular router, checking pathname is robust
-    if (window.location.pathname === '/admin') {
+    if (window.location.pathname === '/isTushryaAdmin') {
       setIsAdmin(true);
     }
   }, []);
