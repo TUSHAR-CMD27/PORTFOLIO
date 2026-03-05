@@ -6,7 +6,7 @@
     min-height: calc(100vh - var(--nav-height));
     padding-left: 7%;
     padding-top: 5vh;
-    
+
 }
 
 .about-content-scroll {
@@ -17,7 +17,7 @@
     padding-right: 9rem;
     padding-bottom: 5rem;
     z-index: 2;
-    
+
 }
 
 
@@ -112,17 +112,41 @@
 @media screen and (max-width: 768px) {
     .about-container {
         padding-left: 5%;
+        padding-right: 5%;
+        padding-top: 12vh;
+        /* Make space for navbar on mobile */
     }
 
     .about-content-scroll {
         width: 100%;
-        padding-right: 5%;
-        background-color: rgba(252, 249, 242, 0.85);
-        /* Semi-transparent bg over collage */
-        backdrop-filter: blur(5px);
+        padding-right: 0;
+        background-color: transparent;
+        /* Remove old light background */
+        backdrop-filter: none;
+        /* Let the green collage shine through naturally or apply light blur */
     }
 
     .about-big-title {
-        font-size: 4rem;
+        font-size: 3.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .about-description {
+        font-size: 1.1rem;
+    }
+
+    .list-indent-1 {
+        flex-wrap: wrap;
+        /* Prevent overflow of list items */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .about-big-title {
+        font-size: 2.8rem;
+    }
+
+    .about-description {
+        font-size: 1rem;
     }
 }

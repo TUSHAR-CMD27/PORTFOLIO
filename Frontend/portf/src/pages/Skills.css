@@ -43,18 +43,31 @@
 @media screen and (max-width: 768px) {
     .skills-container {
         flex-direction: column;
+        padding-top: 10vh;
+        /* Clear space below mobile navbar */
     }
 
     .skills-left-bg {
         width: 100%;
-        position: absolute;
+        height: 100vh;
+        position: fixed;
+        /* Make the collage a fixed background on mobile */
+        top: 0;
+        left: 0;
         z-index: 0;
-        opacity: 0.15;
+        opacity: 0.2;
+        /* Tone down opacity so menu text is readable */
     }
 
     .skills-right-content {
         width: 100%;
+        min-height: calc(100vh - 10vh);
         z-index: 2;
         background: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* Center the flowing menu in mobile view */
+        padding-bottom: 10vh;
     }
 }
