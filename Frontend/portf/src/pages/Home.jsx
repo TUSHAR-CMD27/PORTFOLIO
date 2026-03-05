@@ -1,5 +1,5 @@
 import React from 'react';
-import './About.css';
+import './ABout.css';
 import AnimatedGreenCollage from '../components/AnimatedGreenCollage';
 
 const Home = () => {
