@@ -136,18 +136,20 @@
     font-size: 11px;
     font-weight: bold;
 }
+
 .exp-right-bg {
     position: absolute;
     top: 0;
     left: 21.2%;
     width: 60%;
-   
+
     filter: blur(6px);
     opacity: 0.3;
     height: 100%;
-    z-index:0;
-    
+    z-index: 0;
+
 }
+
 /* 2. Middle: Code Editor */
 .code-panel {
     flex-grow: 1;
@@ -361,16 +363,53 @@
     color: var(--text-dim);
 }
 
-/* Prevent collapse on narrow viewports but allow scrolling */
+/* Mobile Responsiveness */
 @media (max-width: 900px) {
     .contact-page {
-        /* Set page overflow to allow scrolling out of frame if necessary */
         align-items: flex-start;
-        overflow-x: auto;
+        padding: 5rem 5% 2rem;
+        height: auto;
+        overflow-x: hidden;
     }
 
     .editor-container {
-        /* Keep 3 columns forced as requested by the user even if they scroll horizontally */
-        min-width: 900px;
+        flex-direction: column;
+        height: auto;
+        min-width: unset;
+        width: 100%;
+    }
+
+    .explorer-panel {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .code-panel {
+        width: 100%;
+        min-height: 400px;
+    }
+
+    .chat-panel {
+        width: 100%;
+        border-left: none;
+        border-top: 1px solid var(--border);
+    }
+
+    .exp-right-bg {
+        display: none;
+    }
+
+    .line-numbers,
+    .code-lines {
+        font-size: 14px;
+    }
+
+    .indent-1 {
+        padding-left: 10px;
+    }
+
+    .indent-2 {
+        padding-left: 20px;
     }
 }

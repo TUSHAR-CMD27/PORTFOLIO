@@ -69,6 +69,22 @@
     color: var(--accent-red);
 }
 
+/* Desktop styling remains unchanged above this point */
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 5px 0;
+    transition: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
 @media screen and (max-width: 960px) {
     .nav-menu {
         gap: 1rem;
@@ -77,8 +93,58 @@
 }
 
 @media screen and (max-width: 768px) {
+    .navbar-logo {
+        font-size: 1.5rem;
+    }
+
+    .menu-icon {
+        display: block;
+        margin-right: 20px;
+    }
+
+    /* Hamburger Animation */
+    .bar.open:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .bar.open:nth-child(2) {
+        opacity: 0;
+    }
+
+    .bar.open:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
     .nav-menu {
+        position: fixed;
+        top: var(--nav-height);
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - var(--nav-height));
+        background-color: var(--nav-bg);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        transition: left 0.4s ease;
+        border-top: 1px solid var(--nav-border);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-menu.active-mobile {
+        left: 0;
+    }
+
+    .nav-item {
+        height: auto;
+    }
+
+    .nav-link {
+        font-size: 1.5rem;
+    }
+
+    /* Remove underline effect on mobile for cleaner look */
+    .nav-link::after {
         display: none;
-        /* In a real app, implement hamburger menu */
     }
 }

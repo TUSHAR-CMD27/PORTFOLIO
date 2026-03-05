@@ -34,10 +34,10 @@ const Home = () => {
 
         <div className="about-paragraph-section">
           <p className="about-description">
-           As an engineering student, I’ve moved past just studying theory to getting my hands dirty with real-world applications. Whether it’s troubleshooting a complex design or building a project like [Insert Project Name] from scratch, I’m at my best when I’m solving puzzles that have a tangible impact.
+           As an engineering student, I’ve moved past just studying theory to getting my hands dirty with real-world applications. Whether it’s troubleshooting a complex design or building a real world project from scratch, I’m at my best when I’m solving puzzles that have a tangible impact.
           </p>
           <p className="about-description">
-           Beyond the technical skills like [Skill A] and [Skill B], I’ve learned that good engineering is as much about persistence and adaptability as it is about math. I enjoy the process of trial, error, and refinement that leads to a solid final product. My goal is to bring this mix of technical curiosity and practical problem-solving to a team where I can keep learning and start contributing to meaningful, high-stakes projects.
+           Beyond the technical skills like Machine Learning, MERN stack and UI/UX, I’ve learned that good engineering is as much about persistence and adaptability as it is about math. I enjoy the process of trial, error, and refinement that leads to a solid final product. My goal is to bring this mix of technical curiosity and practical problem-solving to a team where I can keep learning and start contributing to meaningful, high-stakes projects.
           </p>
            
         </div>

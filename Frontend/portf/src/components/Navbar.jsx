@@ -3,6 +3,7 @@ import './Navbar.css';
 
 const Navbar = () => {
   const [activeId, setActiveId] = useState('home');
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
     { id: 'home', label: 'Home' },
@@ -36,7 +37,12 @@ const Navbar = () => {
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
+      setMenuOpen(false); // Close menu after clicking on mobile
     }
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
   };
 
   return (
@@ -49,7 +55,15 @@ const Navbar = () => {
         >
         Tushar's Workspace :.
         </div>
-        <ul className="nav-menu">
+        
+        {/* Hamburger Menu Icon */}
+        <div className="menu-icon" onClick={toggleMenu}>
+          <div className={menuOpen ? "bar open" : "bar"}></div>
+          <div className={menuOpen ? "bar open" : "bar"}></div>
+          <div className={menuOpen ? "bar open" : "bar"}></div>
+        </div>
+
+        <ul className={menuOpen ? "nav-menu active-mobile" : "nav-menu"}>
           {navLinks.map((link) => (
             <li key={link.id} className="nav-item">
               <span

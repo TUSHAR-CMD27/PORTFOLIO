@@ -6,7 +6,7 @@
     position: relative;
     min-height: calc(100vh - var(--nav-height));
     width: 100%;
-    background-color:#1a1a1a;
+    background-color: #1a1a1a;
     /* Deep matte black matching the rest of the site */
     overflow: hidden;
     padding-left: 1vw;
@@ -40,7 +40,7 @@
     color: #bf712d;
     line-height: 1.4;
     padding-left: 1rem;
-    
+
     margin-bottom: 2rem;
     letter-spacing: 1px;
 }
@@ -124,7 +124,7 @@
     z-index: 2;
     text-align: right;
     padding-left: 2rem;
-    padding-right:rem;
+    padding-right: rem;
 }
 
 .exp-role-text {
@@ -153,6 +153,7 @@
         padding-right: 5vw;
         padding-top: 5vh;
         overflow-y: auto;
+        height: auto;
     }
 
     .exp-left-column,
@@ -160,21 +161,51 @@
     .exp-right-column {
         max-width: 100%;
         width: 100%;
+        padding-right: 0;
+        padding-left: 0;
     }
 
     .exp-center-image {
-        transform: translateY(0) translateX(0);
-        max-width: 100%;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
+        transform: none;
+        max-width: 80%;
+        margin: 10px 15px 10px 1px;
     }
 
     .exp-right-column {
-        min-height: 50vh;
+        min-height: auto;
         margin-top: 2rem;
+        padding-bottom: 3rem;
     }
 
     .exp-right-bg .collage-container {
         position: absolute;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .exp-heading,
+    .exp-role-text {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .exp-right-content {
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .exp-body {
+        font-size: 1.15rem;
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .exp-bullets {
+        padding-left: 1rem;
+    }
+
+    .exp-bullets li {
+        font-size: 1.05rem;
     }
 }
